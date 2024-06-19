@@ -9,7 +9,7 @@ type Props = {
 
 function BlogList({ posts }: Props) {
   {
-    /** 6:37 */
+    /** 6:47 */
   }
   return (
     <div>
