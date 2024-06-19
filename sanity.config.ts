@@ -5,7 +5,7 @@
  */
 
 import {visionTool} from '@sanity/vision'
-import {defineConfig} from 'sanity'
+import {Studio, StudioNavbar, defineConfig} from 'sanity'
 import {structureTool} from 'sanity/structure'
 
 // Go to https://www.sanity.io/docs/api-versioning to learn how API versioning works
@@ -14,6 +14,8 @@ import {schema} from './sanity/schema'
 
 export default defineConfig({
   basePath: '/studio',
+  name: "Slajara_Studio",
+  title: "Slajara Studio",
   projectId,
   dataset,
   // Add and edit the content schema in the './sanity/schema' folder
@@ -24,4 +26,9 @@ export default defineConfig({
     // https://www.sanity.io/docs/the-vision-plugin
     visionTool({defaultApiVersion: apiVersion}),
   ],
+  studio:{
+    components:{
+      navbar: StudioNavbar,
+    },
+  },
 })
