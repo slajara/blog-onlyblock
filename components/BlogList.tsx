@@ -9,9 +9,9 @@ type Props = {
 };
 
 function BlogList({ posts }: Props) {
-  {
-    /** 6:47 */
-  }
+  
+    /** 7:11 */
+    console.log("HOLAAA",posts.length);
   return (
     <div>
       <hr className="border-[#F7Ab0A] mb-10" />
@@ -26,6 +26,7 @@ function BlogList({ posts }: Props) {
                   src={urlFor(post.mainImage).url()}
                   alt={post._createdAt}
                   fill
+                  sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   priority={true}
                 
                 />

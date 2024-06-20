@@ -33,6 +33,7 @@ async function PostPage({ params: { slug } }: Props) {
               src={urlFor(post.mainImage).url()}
               alt={post._createdAt}
               fill
+              sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 33vw"
               priority={true}
             />
           </div>
@@ -53,7 +54,7 @@ async function PostPage({ params: { slug } }: Props) {
               <div className="flex items-center space-x-2">
                 <Image
                   className="rounded-full"
-                  src={urlFor(post.author.image).url()}
+                  src={urlFor(post.author?.image).url()}
                   alt={post.author.name}
                   height={40}
                   width={40}

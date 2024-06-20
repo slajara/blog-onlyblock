@@ -13,7 +13,7 @@ export const urlForImage = (source: Image) => {
 }
 
 
-import React from 'react'
+
 import { client } from './client'
 import imageUrlBuilder from '@sanity/image-url'
 
