@@ -9,9 +9,8 @@ type Props = {
 };
 
 function BlogList({ posts }: Props) {
-  
-    /** 7:11 */
-    console.log("HOLAAA",posts.length);
+  /** 7:11 */
+  console.log("HOLAAA", posts.length);
   return (
     <div>
       <hr className="border-[#F7Ab0A] mb-10" />
@@ -21,15 +20,17 @@ function BlogList({ posts }: Props) {
           <ClientSideRoute key={post._id} route={`/post/${post.slug?.current}`}>
             <div className="flex flex-col group cursor-pointer">
               <div className="relative w-full h-80 drop-shadow-xl group-hover:scale-105 transition-transform duration-200 ease-out">
-                <Image
-                  className="object-cover object-left lg:object-center"
-                  src={urlFor(post.mainImage).url()}
-                  alt={post._createdAt}
-                  fill
-                  sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  priority={true}
-                
-                />
+                {post.mainImage && (
+                  <Image
+                    className="object-cover object-left lg:object-center"
+                    src={urlFor(post.mainImage).url()}
+                    alt={post._createdAt}
+                    fill
+                    sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    priority={true}
+                  />
+                )}
+
                 <div className="absolute bottom-0 w-full bg-opacity-20 bg-black backdrop-blur-lg rounded drop-shadow-lg text-white p-5 flex justify-between">
                   <div>
                     <p className="font-bold">{post.title} </p>

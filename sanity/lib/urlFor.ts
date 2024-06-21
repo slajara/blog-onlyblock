@@ -8,7 +8,7 @@ const builder = imageUrlBuilder(client);
 // builder an image and returns the builder for you to specify additional
 // parameters:
 function urlFor(source: any) {
-  return builder.image(source);
+  return source ? builder.image(source).url() : '';
 }
 
 export default urlFor;
