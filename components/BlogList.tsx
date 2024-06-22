@@ -9,11 +9,17 @@ type Props = {
 };
 
 function BlogList({ posts }: Props) {
-  /** 7:11 */
-  console.log("HOLAAA", posts.length);
   return (
     <div>
       <hr className="border-[#F7Ab0A] mb-10" />
+
+      <div>
+        {posts.map((post) => (
+          <div key={post._id} className="mt-5 flex-1">
+            <p className="underline text-lg font-bold">{post.title}</p>
+          </div>
+        ))}
+      </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 px-10 gap-10 gap-y-16 pb-24">
         {posts.map((post) => (

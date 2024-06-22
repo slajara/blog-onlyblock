@@ -1,9 +1,10 @@
 import { client } from "@/sanity/lib/client";
 import urlFor from "@/sanity/lib/image";
-import category from "@/sanity/schemaTypes/category";
 import { Post } from "@/typings";
 import { groq } from "next-sanity";
 import { Image } from "next-sanity/image";
+import { PortableText } from "@portabletext/react";
+import { RichTextComponents } from "@/components/RichTextComponents";
 
 type Props = {
   params: {
@@ -37,7 +38,7 @@ async function PostPage({ params: { slug } }: Props) {
               priority={true}
             />
           </div>
-        
+
           <section className="p-5 bg-[#F7AB0A] w-full">
             <div className="flex flex-col md:flex-row justify-between gap-y-5">
               <div>
@@ -82,6 +83,8 @@ async function PostPage({ params: { slug } }: Props) {
           </section>
         </div>
       </section>
+
+      <PortableText value={post.body} components={RichTextComponents} />
     </article>
   );
 }
