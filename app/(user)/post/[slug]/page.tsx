@@ -29,14 +29,16 @@ async function PostPage({ params: { slug } }: Props) {
       <section className="space-x-2 border border-[F7AB0A] text-white">
         <div className="relative min-h-56 flex flex-col md:flex-row justify-between">
           <div className="absolute top-0 w-full h-full opacity-10 blur-sm p-10">
-            <Image
-              className="object-cover object-left lg:object-center"
-              src={urlFor(post.mainImage).url()}
-              alt={post._createdAt}
-              fill
-              sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              priority={true}
-            />
+            {post.mainImage && (
+              <Image
+                className="object-cover object-left lg:object-center"
+                src={urlFor(post.mainImage).url()}
+                alt={post._createdAt}
+                fill
+                sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                priority={true}
+              />
+            )}
           </div>
 
           <section className="p-5 bg-[#F7AB0A] w-full">
